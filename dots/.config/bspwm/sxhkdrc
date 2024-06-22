@@ -1,0 +1,130 @@
+super + b
+	wmctrl -a Mozilla Firefox || firefox-esr
+
+super + shift + b
+	wmctrl -a Mozilla Firefox Private Browsing || firefox-esr -private-window
+
+super + Return
+	tilix
+
+# rofi launchers
+super + space
+   	rofi  drun -show drun -line padding 4 -hide-scrollbar -show-icons 
+   	
+super + shift + Return
+    terminator
+	
+# rofi network manager (will not work unless on wifi)	
+super + n
+	bash ~/bin/rofi-network-manager
+
+# logout, shutdown, reboot
+super + x
+	~/bin/power
+	
+# help with shortcuts
+super + h
+	tilix -e ~/bin/bsphelp.sh
+
+# application launchers
+
+super + f
+	wmctrl -a Thunar || thunar
+
+super + e 	
+	wmctrl -a Geany || geany
+
+super + g
+	gimp
+
+super + r
+   tilix -e "ranger"
+
+super + v
+   tilix -e "nvim"
+
+super + c
+	google-chrome
+	
+super + d
+	Discord
+
+super + o
+	obs
+	
+super + shift + c
+	galculator
+
+# set the window state
+super + shift + {t,s,f}
+	bspc node -t {tiled,floating,fullscreen}
+
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
+	
+super + shift + r
+	bspc wm -r; notify-send 'bspwm' 'Restarted'
+
+## windows keybindings
+super + shift + q
+	bspc quit
+
+super + q
+	bspc node -c
+
+super + i
+    bspc node -R 90
+super + shift + i
+    bspc node -R -90
+
+super + { Left, Down, Up, Right}
+	bspc node -f {west,south,north,east}
+	
+super + shift + { Left, Down, Up, Right}
+	bspc node -s {west,south,north,east}
+
+## Change workspace with dunst feedback
+super + {_,shift + }{1-9,0}
+	bspc {desktop --focus,node --to-desktop} 'focused:^{1-9,10}' --follow; \
+	~/bin/whichwspace
+
+# Resize tiling windows
+super + ctrl + {Left,Down,Up,Right}
+	{bspc node -z left -40 0; bspc node -z right -40 0, \
+	bspc node -z bottom 0 40; bspc node -z top 0 40, \
+	bspc node -z bottom 0 -40; bspc node -z top 0 -40, \ 
+	bspc node -z left 40 0; bspc node -z right 40 0}
+	
+## audio
+
+# Change volume, chunky
+super + shift + Up
+    ~/bin/changevolume up
+    
+super + shift + Down
+	~/bin/changevolume down
+	
+super + shift + m
+	~/bin/changevolume mute
+
+#########
+# Scrot #
+#########
+super + @Print
+	flameshot gui
+
+@Print
+	scrot -e 'mv $f ~/Screenshots'; \
+	notify-send 'Scrot' 'Image saved to ~/Screenshots'
+	
+## redshift
+super + alt + r
+	~/bin/redshift-on
+	
+super + alt + b
+	~/bin/redshift-off
+    
+super + @equal
+	bspc query -N -d | xargs -I % bspc node % -B
