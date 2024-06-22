@@ -35,7 +35,7 @@ sudo apt install -y dunst unzip xdotool libnotify-dev
 sudo apt install -y pipewire pavucontrol pamixer
 
 # Multimedia
-sudo apt install -y mpv mpv-mpris nvtop pamixer ffmpeg qimgv gimp obs-studio mkvtoolnix-gui redshift eog brightnessctl
+sudo apt install -y mpv mpv-mpris nvtop pamixer ffmpeg qimgv # gimp obs-studio mkvtoolnix-gui redshift eog brightnessctl
 
 # nwg-look takes the place of lxappearance in x11 
 # 
@@ -62,18 +62,18 @@ sudo apt install -y exa
 sudo apt install -y evince pdfarranger
 
 # Others
-sudo apt install -y figlet galculator cpu-x udns-utils whois curl tree neofetch
+sudo apt install -y figlet galculator cpu-x udns-utils whois curl tree screenfetch
 
 # Fonts and icons for now
 sudo apt install -y fonts-recommended fonts-ubuntu fonts-font-awesome fonts-terminus papirus-icon-theme
 bash ~/bookworm-scripts/resources/nerdfonts.sh
 
 # Install SDDM Console Display Manager
-# sudo apt install --no-install-recommends -y sddm
-# sudo systemctl enable sddm
+sudo apt install --no-install-recommends -y sddm
+sudo systemctl enable sddm
 
 # Install the Ly Console Display Manager
-bash ~/bookworm-scripts/ly.sh
+# bash ~/bookworm-scripts/ly.sh
 
 # wofi - confusingly similar to rofi
 # sudo apt install wofi
