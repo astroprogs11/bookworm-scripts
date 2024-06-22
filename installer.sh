@@ -42,7 +42,7 @@ sudo apt install -y kitty tilix
 sudo apt install -y pulseaudio alsa-utils pavucontrol volumeicon-alsa pamixer
 
 # Neofetch
-sudo apt install -y neofetch
+sudo apt install -y screenfetch
 
 # Installation for Appearance management
 sudo apt install -y lxappearance 
@@ -66,10 +66,10 @@ sudo apt install -y exa
 
 # Printing and bluetooth (if needed)
 # sudo apt install -y cups system-config-printer simple-scan
-# sudo apt install -y bluez blueman
+sudo apt install -y bluez blueman
 
 # sudo systemctl enable cups
-# sudo systemctl enable bluetooth
+sudo systemctl enable bluetooth
 
 # Packages needed for window manager installation
 sudo apt install -y picom rofi dunst libnotify-bin unzip wmctrl xdotool libnotify-dev
@@ -83,7 +83,7 @@ sudo apt install -y picom rofi dunst libnotify-bin unzip wmctrl xdotool libnotif
 
 # My Favorites
 # Multimedia/GFX
-sudo apt install -y mpv qimgv scrot gimp obs-studio mkvtoolnix-gui redshift eog brightnessctl
+sudo apt install -y mpv qimgv scrot # gimp obs-studio mkvtoolnix-gui redshift eog brightnessctl
 
 # PDF 
 sudo apt install -y  evince pdfarranger
