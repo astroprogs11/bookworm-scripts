@@ -62,4 +62,4 @@ ENDC="\\[\\e[0m\\]"
 if [[ -n "$SSH_CLIENT" ]]; then ssh_message="-ssh_session"; fi
 PS1="${MAGENTA}\t ${GREEN}\u ${WHITE}at ${YELLOW}\h${RED}${ssh_message} ${WHITE}in ${BLUE}\w \n${CYAN}\$${ENDC} "
 
-neofetch
+screenfetch
